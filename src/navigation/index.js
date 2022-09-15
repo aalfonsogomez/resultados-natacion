@@ -1,68 +1,47 @@
-import { Text, View } from 'react-native';
+
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-
-function Feed() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Feed!</Text>
-    </View>
-  );
-}
-
-function Profile() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Profile!</Text>
-    </View>
-  );
-}
-
-function Notifications() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Notifications!</Text>
-    </View>
-  );
-}
+import Profile from '../tabs/Profile.js';
+import AllTimes from '../tabs/AllTimes.js';
+import SeasonTimes from '../tabs/SeasonTimes.js';
 
 const Tab = createBottomTabNavigator();
 
 export default function MyTabs() {
   return (
     <Tab.Navigator
-      initialRouteName="Feed"
+      initialRouteName="Profile"
       screenOptions={{
         tabBarActiveTintColor: '#e91e63',
       }}
     >
       <Tab.Screen
-        name="Feed"
-        component={Feed}
-        options={{
-          tabBarLabel: 'Home',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Notifications"
-        component={Notifications}
-        options={{
-          tabBarLabel: 'Updates',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="bell" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Profile"
+        name="Información General"
         component={Profile}
         options={{
-          tabBarLabel: 'Profile',
+          tabBarLabel: 'Información General',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="account" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Todos los tiempos"
+        component={AllTimes}
+        options={{
+          tabBarLabel: 'Todos los tiempos',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="clock-time-three" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Tiempos Temp. 22/23"
+        component={SeasonTimes}
+        options={{
+          tabBarLabel: 'Temp. 22/23',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="timelapse" color={color} size={size} />
           ),
         }}
       />
