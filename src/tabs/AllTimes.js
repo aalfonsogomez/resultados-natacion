@@ -1,7 +1,7 @@
 import { Text, View } from 'react-native';
 import useAllTimes from '../hooks/useAllTimes';
 
-export default function Feed() {
+export default function AllTimes() {
     const { allTimes } = useAllTimes();
 
     return (
