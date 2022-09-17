@@ -1,6 +1,8 @@
 import { Text } from 'react-native';
 import { useState } from 'react';
 import { ListItem, Icon } from '@rneui/themed';
+import formatDate from '../utils/formatDate';
+import formatValue from '../utils/formatValue';
 
 export default function Acordeon(props) {
     const [expanded, setExpanded] = useState(false);
@@ -31,7 +33,6 @@ export default function Acordeon(props) {
         '400-7': '400 Mariposa',
         '800-7': '800 Mariposa',
     }
-    console.log(props.data)
     const { date, value } = props.data[0];
     return (
         <ListItem.Accordion
@@ -40,8 +41,10 @@ export default function Acordeon(props) {
                 <>
                     <Icon name="place" size={30} />
                     <Text>{pruebas[props.item]}</Text>
-                    <Text>{date}</Text>
-                    <Text>{value} </Text>
+                    <Text>**</Text>
+                    <Text>{formatDate(date)}</Text>
+                    <Text>**</Text>
+                    <Text>{formatValue(value)} </Text>
                 </>
             }
             isExpanded={expanded}
@@ -53,9 +56,9 @@ export default function Acordeon(props) {
                 <ListItem key={i} bottomDivider>
                     <ListItem.Content>
                         <ListItem.Title>{l.competition_name}</ListItem.Title>
-                        <ListItem.Subtitle>{l.date}</ListItem.Subtitle>
+                        <ListItem.Subtitle>{formatDate(l.date)}</ListItem.Subtitle>
                     </ListItem.Content>
-                    <Text>{l.value}</Text>
+                    <Text>{formatValue(l.value)}</Text>
                     <ListItem.Chevron />
                 </ListItem>
             ))}
