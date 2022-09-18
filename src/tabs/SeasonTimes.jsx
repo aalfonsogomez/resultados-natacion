@@ -1,6 +1,7 @@
 import { ScrollView } from 'react-native';
-import Accordion from '../components/Accordion';
-import useSeasonTimes from '../hooks/useSeasonTime';
+import Accordion from '../components/Accordion.jsx';
+import useSeasonTimes from '../hooks/useSeasonTime.js';
+import theme from '../data/theme.js';
 
 export default function SeasonTimes() {
     const { seasonTimes } = useSeasonTimes();
@@ -24,11 +25,9 @@ export default function SeasonTimes() {
                 ];
             return ant;
         }, {});
-
-    const listOrder = ['50-5', '100-5', '200-5', '400-5', '800-5', '50-4', '100-4', '200-4', '400-4', '800-4', '50-8', '100-8', '200-8', '400-8', '800-8', '50-6', '100-6', '200-6', '400-6', '800-6', '50-7', '100-7', '200-7', '400-7', '800-7'];
     return (
         <ScrollView>
-            {listOrder.map((item, index) => {
+            {theme.order.map((item, index) => {
                 if (viewSeasonTimes && viewSeasonTimes[item]) return <Accordion key={index} data={viewSeasonTimes[item]} item={item} index={index}></Accordion>
             })}
         </ScrollView>

@@ -1,9 +1,9 @@
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import Profile from '../tabs/Profile.js';
-import AllTimes from '../tabs/AllTimes.js';
-import SeasonTimes from '../tabs/SeasonTimes.js';
+import Profile from '../tabs/Profile.jsx';
+import AllTimes from '../tabs/AllTimes.jsx';
+import SeasonTimes from '../tabs/SeasonTimes.jsx';
 
 const Tab = createBottomTabNavigator();
 
