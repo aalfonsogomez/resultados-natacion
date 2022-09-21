@@ -14,13 +14,11 @@ export default function Accordion(props) {
         <ListItem.Accordion
             key={props.index}
             content={
-                <View>
-                    <MaterialCommunityIcons name="swim" />
-                    <Text>{NAME_TESTS[props.item]}</Text>
-                    <Text>**</Text>
-                    <Text>{formatDate(date)}</Text>
-                    <Text>**</Text>
-                    <Text>{formatValue(value)} </Text>
+                <View style={styles.container}>
+                    <MaterialCommunityIcons name="swim" size={22} />
+                    <Text style={styles.test}>{NAME_TESTS[props.item]}</Text>
+                    <Text style={styles.date}>{formatDate(date)}</Text>
+                    <Text style={styles.value}>{formatValue(value)} </Text>
                 </View>
             }
             isExpanded={expanded}
@@ -33,9 +31,8 @@ export default function Accordion(props) {
                     <ListItem.Content>
                         <ListItem.Title>{l.competition_name}</ListItem.Title>
                         <ListItem.Subtitle>{formatDate(l.date)}</ListItem.Subtitle>
+                        <Text>{formatValue(l.value)}</Text>
                     </ListItem.Content>
-                    <Text>{formatValue(l.value)}</Text>
-                    <ListItem.Chevron />
                 </ListItem>
             ))}
         </ListItem.Accordion>
@@ -45,9 +42,21 @@ export default function Accordion(props) {
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        background: '#fff'
     },
-  });
+    test: {
+        fontWeight: 'bold',
+        fontSize: 16,
+        color: 'blue'
+    },
+    date: {
+        fontSize: 16,
+
+    },
+    value: {
+        fontSize: 16,
+    }
+});
