@@ -9,13 +9,14 @@ import formatValue from '../utils/formatValue';
 export default function Competitions(props) {
     const [expanded, setExpanded] = useState(false);
     const { NAME_TESTS } = swim;
-    console.log({props});
+    const { competition_name } = props?.data[0];
     return (
         <ListItem.Accordion
             key={props.index}
             content={
                 <View style={styles.container}>
-                    <Text>{props.item}</Text>
+                     <MaterialCommunityIcons name="map-marker" size={22} />
+                    <Text>{competition_name}</Text>
                 </View>
             }
             isExpanded={expanded}
