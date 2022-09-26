@@ -20,7 +20,7 @@ export default function MyTabs() {
                 name="Información General"
                 component={Profile}
                 options={{
-                    tabBarLabel: 'Información General',
+                    tabBarLabel: 'Info. General',
                     tabBarIcon: ({ color, size }) => (
                         <MaterialCommunityIcons name="account" color={color} size={size} />
                     ),
@@ -42,7 +42,7 @@ export default function MyTabs() {
                 options={{
                     tabBarLabel: 'Competiciones',
                     tabBarIcon: ({ color, size }) => (
-                        <MaterialCommunityIcons name="clock-time-three" color={color} size={size} />
+                        <MaterialCommunityIcons name="pool" color={color} size={size} />
                     ),
                 }}
             />

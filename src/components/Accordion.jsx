@@ -29,9 +29,11 @@ export default function Accordion(props) {
             {props.data.map((l, i) => (
                 <ListItem key={i} bottomDivider>
                     <ListItem.Content>
-                        <ListItem.Title>{l.competition_name}</ListItem.Title>
-                        <ListItem.Subtitle>{formatDate(l.date)}</ListItem.Subtitle>
-                        <Text>{formatValue(l.value)}</Text>
+                        <ListItem.Title style={styles.competition}>{l.competition_name}</ListItem.Title>
+                        <View style={styles.container}>
+                            <Text style={styles.competitionDate}>{formatDate(l.date)}</Text>
+                            <Text style={styles.competitionValue}>{formatValue(l.value)}</Text>
+                        </View>
                     </ListItem.Content>
                 </ListItem>
             ))}
@@ -44,19 +46,38 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'space-around',
-        background: '#fff'
+        justifyContent: 'space-between'
     },
     test: {
         fontWeight: 'bold',
+        width: '38%',
         fontSize: 16,
-        color: 'blue'
+        color: 'blue',
+        marginLeft: 10
     },
     date: {
-        fontSize: 16,
-
+        width: '35%',
+        fontSize: 15
     },
     value: {
+        fontWeight: 'bold',
+        width: '25%',
+        fontSize: 15,
+        textAlign: 'right',
+        paddingRight: 10
+    },
+    competition: {
+        fontWeight: 'bold',
+        fontSize: 16
+    },
+    competitionDate: {
+        width: '50%',
+        fontSize: 16
+
+    },
+    competitionValue: {
+        width: '50%',
         fontSize: 16,
+        textAlign: 'center'
     }
 });
