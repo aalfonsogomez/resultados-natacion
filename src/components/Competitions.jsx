@@ -14,9 +14,9 @@ export default function Competitions(props) {
         <ListItem.Accordion
             key={props.index}
             content={
-                <View style={styles.container}>
-                     <MaterialCommunityIcons name="map-marker" size={22} />
-                    <Text>{competition_name}</Text>
+                <View style={styles.containerCompetition}>
+                    <MaterialCommunityIcons name="map-marker" size={22} />
+                    <Text style={styles.competition}>{competition_name}</Text>
                 </View>
             }
             isExpanded={expanded}
@@ -25,13 +25,11 @@ export default function Competitions(props) {
             }}
         >
             {props.data.map((l, i) => (
-                <ListItem key={i} bottomDivider>
-                    <ListItem.Content>
-                        <ListItem.Title>{NAME_TESTS[l.test]}</ListItem.Title>
-                        <ListItem.Subtitle>{formatDate(l.date)}</ListItem.Subtitle>
-                        <Text>{formatValue(l.value)}</Text>
-                    </ListItem.Content>
-                </ListItem>
+                <View style={styles.container} key={i}>
+                    <Text style={styles.test}>{NAME_TESTS[l.test]}</Text>
+                    <Text style={styles.date}>{formatDate(l.date)}</Text>
+                    <Text style={styles.value}>{formatValue(l.value)}</Text>
+                </View>
             ))}
         </ListItem.Accordion>
 
@@ -39,21 +37,36 @@ export default function Competitions(props) {
 }
 
 const styles = StyleSheet.create({
+    containerCompetition: {
+        flex: 1,
+        flexDirection: 'row'
+    },
     container: {
         flex: 1,
         flexDirection: 'row',
-        background: '#fff'
+        backgroundColor: 'white',
+        paddingVertical: 10,
+    },
+    competition: {
+        fontWeight: 'bold',
+        fontSize: 15
     },
     test: {
         fontWeight: 'bold',
-        fontSize: 16,
-        color: 'blue'
+        width: '38%',
+        fontSize: 14,
+        color: 'blue',
+        marginLeft: 20
     },
     date: {
-        fontSize: 16,
-
+        width: '35%',
+        fontSize: 14
     },
     value: {
-        fontSize: 16,
-    }
+        fontWeight: 'bold',
+        width: '25%',
+        fontSize: 14,
+        textAlign: 'right',
+        paddingRight: 35
+    },
 });
