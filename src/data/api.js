@@ -1,5 +1,12 @@
 export default  {
     API_URL: '',
-    NAME: '',
-    LAST_NAME: '',
+    SWIMMER: {
+        name: '',
+        last_name: '',
+        url: ''
+    },
+    CLUB: {
+        name: '',
+        url: ''
+    }
 }
