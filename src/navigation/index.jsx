@@ -47,10 +47,10 @@ export default function MyTabs() {
                 }}
             />
             <Tab.Screen
-                name="Tiempos Temp. 22/23"
+                name="Tiempos Temp. 23/24"
                 component={SeasonTimes}
                 options={{
-                    tabBarLabel: 'Temp. 22/23',
+                    tabBarLabel: 'Temp. 23/24',
                     tabBarIcon: ({ color, size }) => (
                         <MaterialCommunityIcons name="timelapse" color={color} size={size} />
                     ),
