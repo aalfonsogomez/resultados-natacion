@@ -11,11 +11,9 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 
 _Hace falta tener instalado en el sistema:_
 
-```
-* [NodeJs] (https://nodejs.org/es/)
-* [Expo.dev] (https://expo.dev/).
+* [NodeJs](https://nodejs.org/es/)
+* [Expo.dev](https://expo.dev/)
 
-```
 
 Además editar el fichero api.js donde se debe incluir el nombre y apellidos del nadador del que se desean mostrar los tiempos.
 
