@@ -12,8 +12,8 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 _Hace falta tener instalado en el sistema:_
 
 ```
-* [NodeJs](https://nodejs.org/es/)
-* [Expo.dev](https://expo.dev/).
+* [NodeJs] (https://nodejs.org/es/)
+* [Expo.dev] (https://expo.dev/).
 
 ```
 
@@ -35,8 +35,6 @@ npm start
 ```
 
 ## Construido con 🛠️
-
-_Menciona las herramientas que utilizaste para crear tu proyecto_
 
 * [React Native](https://reactnative.dev/) - Framework Javascript utilizado.
 * [Expo.dev](https://www.expo.dev/) - Plataforma para realizar apps en Android iOS.
